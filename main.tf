@@ -77,7 +77,7 @@ resource "aws_security_group" "allow_ssh_https" {
 
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.myredhat8.id
-  instance_type          = "t3a.small"
+  instance_type          = "t3a.medium"
   subnet_id              = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.allow_ssh_https.id]
   key_name               = "my-key-pair" # Replace with your SSH key pair name
